@@ -4,12 +4,16 @@ matrix:
     jdk: oraclejdk8
     env: SDK_PROJECT=inbot-stellar-kotlin-wrapper
 
+  - language: scala
+    scala: 2.12.8
+    env: SDK_PROJECT=scala-stellar-sdk
+
 before_cache:
-  - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
-  - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
+  - rm -f  $HOME/inbot-stellar-kotlin-wrapper/.gradle/caches/modules-2/modules-2.lock
+  - rm -fr $HOME/inbot-stellar-kotlin-wrapper/.gradle/caches/*/plugin-resolution/
 cache:
   directories:
-    - $HOME/.gradle/caches/
-    - $HOME/.gradle/wrapper/
+    - $HOME/inbot-stellar-kotlin-wrapper/.gradle/caches/
+    - $HOME/inbot-stellar-kotlin-wrapper/.gradle/wrapper/
 
 script: (cd $SDK_PROJECT/ && ./travis.sh)
