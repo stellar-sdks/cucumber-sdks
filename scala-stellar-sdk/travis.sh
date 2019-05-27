@@ -1,4 +1,4 @@
 #!/bin/bash
 set -ev
 
-echo "it works!"
+sbt test
