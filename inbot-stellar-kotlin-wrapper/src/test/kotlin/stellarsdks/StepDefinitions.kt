@@ -26,7 +26,7 @@ class StepDefinitions {
     init {
         // TODO (jmawson) - reset the stellar instance, quickly, instead of restarting/upgrading image
         //      DB statements via `psql` in bash script?
-        "bin/stellar_standalone.sh true".runCommand()
+        "../bin/stellar_standalone.sh true".runCommand()
     }
 
     @Given("""^account ([A-Za-z]+) with balance of ([0-9]+) XLM$""")
